@@ -155,3 +155,133 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+/* Flow Diagram Styles */
+.flow-diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.flow-box {
+  padding: 12px 24px;
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 14px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.flow-box:hover {
+  background-color: #e8e8e8;
+  border-color: #999;
+}
+
+.flow-box.emphasized {
+  background-color: #3273dc;
+  color: white;
+  border-color: #3273dc;
+  font-weight: 600;
+}
+
+.flow-box.emphasized:hover {
+  background-color: #2366d1;
+  border-color: #2366d1;
+}
+
+.flow-box.deemphasized {
+  opacity: 0.6;
+}
+
+.flow-arrow {
+  font-size: 18px;
+  color: #bbb;
+  font-weight: bold;
+}
+
+/* Image Lightbox Modal */
+.modal-image {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-image.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-image-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-image-content img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 1001;
+}
+
+.modal-close-button:hover {
+  color: #ccc;
+}
+
+.clickable-image {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.clickable-image:hover {
+  opacity: 0.8;
+}
